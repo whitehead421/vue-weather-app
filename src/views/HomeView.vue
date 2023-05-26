@@ -33,9 +33,7 @@
       <Suspense>
         <CityList />
         <template #fallback>
-          <div class="flex justify-center items-center h-96">
-            <i class="fa-solid fa-spinner-third animate-spin text-4xl"></i>
-          </div>
+          <CityCardSkeleton />
         </template>
       </Suspense>
     </div>
@@ -47,6 +45,7 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 import CityList from '../components/CityList.vue'
+import CityCardSkeleton from '../skeletons/CityCardSkeleton.vue'
 
 const router = useRouter()
 const previewCity = (result) => {
