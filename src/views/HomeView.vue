@@ -28,6 +28,17 @@
         </template>
       </ul>
     </div>
+
+    <div class="flex flex-col gap-4">
+      <Suspense>
+        <CityList />
+        <template #fallback>
+          <div class="flex justify-center items-center h-96">
+            <i class="fa-solid fa-spinner-third animate-spin text-4xl"></i>
+          </div>
+        </template>
+      </Suspense>
+    </div>
   </main>
 </template>
 
@@ -35,10 +46,10 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
+import CityList from '../components/CityList.vue'
 
 const router = useRouter()
 const previewCity = (result) => {
-  console.log(result)
   const [city, state] = result.place_name.split(', ')
   router.push({
     name: 'cityView',
