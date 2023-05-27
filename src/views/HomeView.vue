@@ -64,8 +64,8 @@ const previewCity = (result) => {
   })
 }
 
-const mapboxAPIKey =
-  'pk.eyJ1Ijoid2hpdGVoZWFkNDIxIiwiYSI6ImNsaTNvOWt1cjAwNHIzZGtiMTgxMGQ2MTgifQ.6fPM0G4pVBcuka6joEaDXQ'
+const mapboxAPIKey = import.meta.env.VITE_MAP_BOX_API_KEY
+
 const searchQuery = ref('')
 const queryTimeout = ref(null)
 const mapboxSearchResults = ref(null)
